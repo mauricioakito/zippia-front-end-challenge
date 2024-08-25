@@ -6,45 +6,15 @@ import { useUserTable } from "../../hooks/useUserTable";
 import styles from "./Table.module.scss";
 import { IUserArray } from "../../types/user";
 import { FIELDS } from "./Constrains";
+import { useSort } from "../../hooks/useSort";
+import { useFilter } from "../../hooks/useFilter";
 
 export const Table = () => {
-  const [sortColumn, setSortColumn] = useState<string | null>(null);
-  const [sortOrder, setSortOrder] = useState<string | null>(null);
-
-  const { fetchUsers, inputSearch } = useStore();
+  const { fetchUsers, inputSearch, setFetchSelectedUser, setModalState } = useStore();
   const userArray = useUserTable();
   const [user, setUser] = useState<IUserArray[]>();
-
-  const sortData = (userArray: IUserArray[], column: string, order: string) => {
-    return userArray.sort((a, b) => {
-      const valueA = a[column];
-      const valueB = b[column];
-
-      if (typeof valueA === "string" && typeof valueB === "string") {
-        return order === "asc"
-          ? valueA.localeCompare(valueB)
-          : valueB.localeCompare(valueA);
-      } else {
-        return order === "asc" ? valueA - valueB : valueB - valueA;
-      }
-    });
-  };
-
-  const handleSort = (column: string) => {
-    setSortColumn(column);
-    setSortOrder(sortOrder === "asc" ? "desc" : "asc");
-  };
-
-  const filterUsers = () => {
-    const searchTermLowerCase = inputSearch.toLowerCase();
-
-    return userArray.filter((user) => {
-      const userProperties = [user.name];
-      return userProperties.some((property) =>
-        property.toLowerCase().includes(searchTermLowerCase)
-      );
-    });
-  };
+  const { handleSort, sortData, sortColumn, sortOrder } = useSort();
+  const { filterUsers } = useFilter();
 
   useEffect(() => {
     const filteredAndSortedData =
@@ -59,6 +29,11 @@ export const Table = () => {
   useEffect(() => {
     setUser(userArray);
   }, [fetchUsers]);
+
+  const handleUserInfo = (name: string) => {
+    setFetchSelectedUser(name)
+    setModalState(true)
+  }
 
   return (
     <table className={styles.customTable}>
@@ -93,6 +68,7 @@ export const Table = () => {
                 <th>{phone}</th>
                 <th>{city}</th>
                 <th>{companyName}</th>
+                <th className={styles.userInforTable} onClick={() => handleUserInfo(name)}>User Info</th>
               </tr>
             );
           })}
