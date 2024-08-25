@@ -60,12 +60,6 @@ export const Table = () => {
     setUser(userArray);
   }, [fetchUsers]);
 
-  // useEffect(() => {
-  //   if (fetchUsers) {
-  //     setUser(filterUsers);
-  //   }
-  // }, [inputSearch]);
-
   return (
     <table className={styles.customTable}>
       <thead>

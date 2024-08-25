@@ -6,7 +6,7 @@ export const useQuery = async () => {
 
         const data = await response.json();
         const statusCode = response.status;
-        // return data;
+
         return {
             data,
             statusCode
