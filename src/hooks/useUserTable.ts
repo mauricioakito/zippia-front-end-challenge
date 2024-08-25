@@ -43,6 +43,20 @@ export const useUserTable = () => {
 
   }, [query.data]);
 
+  // const userArray = Object.values(query.data).map((item: TUserItemProps) => {
+  //   const { id, name, username, email, phone, address: { city }, company: { name: companyName } } = item;
+
+  //   return {
+  //     id,
+  //     name,
+  //     username,
+  //     email,
+  //     phone,
+  //     city,
+  //     companyName
+  //   }
+  // })
+
   return userArray
 
 }
