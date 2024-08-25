@@ -1,0 +1,30 @@
+.customTable {
+  width: 80%;
+  background-color: #FFFFFF;
+  border-collapse: collapse;
+  border-width: 2px;
+  border-color: #7EA8F8;
+  border-style: solid;
+  color: #000000;
+  margin: 3rem auto;
+}
+
+.customTableHeader {
+  cursor: pointer;
+  color: white
+}
+
+.customTable td, .customTable th {
+  border-width: 2px;
+  border-color: #7EA8F8;
+  border-style: solid;
+  padding: 5px;
+}
+
+.customTable tbody th {
+  font-weight: 400;
+}
+
+.customTable thead {
+  background-color: #7EA8F8;
+}
