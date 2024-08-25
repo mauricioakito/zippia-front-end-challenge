@@ -23,4 +23,8 @@ export const FIELDS = [
     columnFilter: "companyName",
     headerName: "Company Name",
   },
+  {
+    columnFilter: "",
+    headerName: "Info",
+  },
 ];
