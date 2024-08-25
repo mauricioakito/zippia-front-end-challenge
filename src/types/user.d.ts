@@ -31,3 +31,7 @@ export interface IUserArray {
   city: string;
   companyName: string;
 }
+
+export interface IUserRequestProps {
+  data: []
+}
