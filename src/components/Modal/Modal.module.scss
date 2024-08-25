@@ -7,8 +7,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 700px;
-  height: 500px;
+  width: 90%;
+  height: 90%;
   background: #2c2c2c;
   color: white;
   display: flex;
@@ -42,8 +42,13 @@
 .modalBody {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 0 2rem 0 5rem;
+
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 80vw;
+  height: 80%;
+  overflow-y: scroll;
+  margin: 0;
 }
 
 .modalBox h2{
@@ -65,4 +70,27 @@
 .modalBody p {
   width: 42%;
   margin: 0.5rem;
+}
+
+.modalActive {
+  overflow: hidden;
+}
+
+@media screen and (min-width: 768px) {
+
+  .modalBox {
+    width: 700px;
+    height: 500px;
+  }
+
+  .modalBody{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 70%;
+    height: 70%;
+    overflow-y: hidden;
+    margin: 0 2rem 0 5rem;
+  }
+
 }

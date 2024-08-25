@@ -1,5 +1,5 @@
 .customTable {
-  width: 80%;
+  width: 100%;
   background-color: #FFFFFF;
   border-collapse: collapse;
   border-width: 2px;
@@ -32,3 +32,17 @@
 .userInforTable {
   cursor: pointer;
 }
+
+.tableWrapper {
+  overflow-x: scroll;
+  width: 90%;
+}
+
+@media screen and (min-width: 1024px) {
+  .tableWrapper {
+    overflow-x: hidden;
+    width: 90%;
+  }
+}
+
+
