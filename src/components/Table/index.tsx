@@ -40,7 +40,7 @@ export const Table = () => {
       <table className={styles.customTable}>
         <thead>
           <tr>
-            {FIELDS.map((item) => {
+            {fetchUsers && FIELDS.map((item) => {
               const { columnFilter, headerName } = item;
               return (
                 <th
