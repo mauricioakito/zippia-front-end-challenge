@@ -4,6 +4,7 @@ import { Search } from './components/Search'
 import { Table } from './components/Table'
 import { Footer } from './components/Footer'
 import { Message } from './components/Message'
+import { Modal } from './components/Modal'
 
 const App = () => {
 
@@ -13,6 +14,7 @@ const App = () => {
       <Message />
       <Search />
       <Table />
+      <Modal />
       <Footer />
     </>
   )
