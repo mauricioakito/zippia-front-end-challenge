@@ -1,0 +1,68 @@
+.modal {
+  display: none;
+}
+
+.modalBox {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 500px;
+  background: #2c2c2c;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  gap: 1rem
+}
+
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  cursor: pointer;
+}
+
+.isOpen {
+  display: flex;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.4);
+  width: 100vw;
+  height: 100vh;
+}
+
+.modalBody {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 2rem 0 5rem;
+}
+
+.modalBox h2{
+  margin: 0;
+}
+
+.modalFooterButton {
+  cursor: pointer;
+  background-color: #ff6000;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1rem;
+  padding: 10px 20px;
+  align-self: flex-end;
+  margin-right: 2rem;
+}
+
+.modalBody p {
+  width: 42%;
+  margin: 0.5rem;
+}
