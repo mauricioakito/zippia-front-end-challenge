@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from './Modal.module.scss'
 import classNames from 'classnames'
 import { useStore } from '../../store/useStore';
@@ -10,6 +10,20 @@ export const Modal = () => {
 
   const { modalState, setModalState } = useStore();
   const { filterSelectedUser } = useModalFilter()
+
+  const handleBody = () => {
+    const body = document && document.querySelector('body')
+    if (body && modalState) {
+      body.classList.add(`${styles.modalActive}`)
+    } else {
+      body.classList.remove(`${styles.modalActive}`)
+    }
+  }
+
+  useEffect(() => {
+    handleBody()
+  }, [modalState])
+  
 
   if (!filterSelectedUser) return null
 
