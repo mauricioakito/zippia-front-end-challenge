@@ -1,16 +1,12 @@
 import { useEffect, useState, useMemo } from 'react';
-import { TUserItemProps } from '../types/user';
+import { IUserRequestProps, TUserItemProps } from '../types/user';
 import { useQuery } from './useQuery';
 import { useStore } from '../store/useStore';
-
-interface IUserTableProps {
-  data: []
-}
 
 export const useUserTable = () => {
   const result = useQuery()
   const {setStatusCode, fetchUsers} = useStore()
-  const [query, setQuery] = useState<IUserTableProps>({
+  const [query, setQuery] = useState<IUserRequestProps>({
     data: []
   })
 
