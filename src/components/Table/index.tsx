@@ -36,43 +36,45 @@ export const Table = () => {
   }
 
   return (
-    <table className={styles.customTable}>
-      <thead>
-        <tr>
-          {FIELDS.map((item) => {
-            const { columnFilter, headerName } = item;
-            return (
-              <th
-                className={styles.customTableHeader}
-                key={columnFilter}
-                onClick={() => fetchUsers && handleSort(columnFilter)}
-              >
-                {headerName}
-                {sortColumn === columnFilter &&
-                  (sortOrder === "asc" ? "▲" : "▼")}
-              </th>
-            );
-          })}
-        </tr>
-      </thead>
-      <tbody>
-        {user &&
-          user.map((item: IUserArray) => {
-            const { id, name, username, email, phone, city, companyName } =
-              item;
-            return (
-              <tr key={id}>
-                <th>{name}</th>
-                <th>{username}</th>
-                <th>{email}</th>
-                <th>{phone}</th>
-                <th>{city}</th>
-                <th>{companyName}</th>
-                <th className={styles.userInforTable} onClick={() => handleUserInfo(name)}>User Info</th>
-              </tr>
-            );
-          })}
-      </tbody>
-    </table>
+    <div className={styles.tableWrapper}>
+      <table className={styles.customTable}>
+        <thead>
+          <tr>
+            {FIELDS.map((item) => {
+              const { columnFilter, headerName } = item;
+              return (
+                <th
+                  className={styles.customTableHeader}
+                  key={columnFilter}
+                  onClick={() => fetchUsers && handleSort(columnFilter)}
+                >
+                  {headerName}
+                  {sortColumn === columnFilter &&
+                    (sortOrder === "asc" ? "▲" : "▼")}
+                </th>
+              );
+            })}
+          </tr>
+        </thead>
+        <tbody>
+          {user &&
+            user.map((item: IUserArray) => {
+              const { id, name, username, email, phone, city, companyName } =
+                item;
+              return (
+                <tr key={id}>
+                  <th>{name}</th>
+                  <th>{username}</th>
+                  <th>{email}</th>
+                  <th>{phone}</th>
+                  <th>{city}</th>
+                  <th>{companyName}</th>
+                  <th className={styles.userInforTable} onClick={() => handleUserInfo(name)}>User Info</th>
+                </tr>
+              );
+            })}
+        </tbody>
+      </table>
+    </div>
   );
 };
