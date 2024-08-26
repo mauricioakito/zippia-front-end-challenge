@@ -13,9 +13,6 @@ export const useQuery = async () => {
         };
 
         } catch (error) {
-            return {
-                data: {},
-                statusCode: error
-            };
+            console.error(error)
     }
 };
