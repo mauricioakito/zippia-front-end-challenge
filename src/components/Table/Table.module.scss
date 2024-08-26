@@ -31,6 +31,12 @@
 
 .userInforTable {
   cursor: pointer;
+  transition: 0.3s;
+}
+
+.userInforTable:hover {
+  background-color: rgba(0,0,0,0.1);
+  transition: 0.3s;
 }
 
 .tableWrapper {

@@ -62,14 +62,13 @@ export const Table = () => {
               const { id, name, username, email, phone, city, companyName } =
                 item;
               return (
-                <tr key={id}>
+                <tr className={styles.userInforTable} key={id} onClick={() => handleUserInfo(name)}>
                   <th>{name}</th>
                   <th>{username}</th>
                   <th>{email}</th>
                   <th>{phone}</th>
                   <th>{city}</th>
                   <th>{companyName}</th>
-                  <th className={styles.userInforTable} onClick={() => handleUserInfo(name)}>User Info</th>
                 </tr>
               );
             })}
