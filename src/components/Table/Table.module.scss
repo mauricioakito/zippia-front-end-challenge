@@ -1,9 +1,9 @@
 .customTable {
   width: 100%;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-collapse: collapse;
   border-width: 2px;
-  border-color: #7EA8F8;
+  border-color: #7ea8f8;
   border-style: solid;
   color: #000000;
   margin: 3rem auto;
@@ -11,12 +11,13 @@
 
 .customTableHeader {
   cursor: pointer;
-  color: white
+  color: white;
 }
 
-.customTable td, .customTable th {
+.customTable td,
+.customTable th {
   border-width: 2px;
-  border-color: #7EA8F8;
+  border-color: #7ea8f8;
   border-style: solid;
   padding: 5px;
 }
@@ -26,7 +27,7 @@
 }
 
 .customTable thead {
-  background-color: #7EA8F8;
+  background-color: #7ea8f8;
 }
 
 .userInforTable {
@@ -35,7 +36,7 @@
 }
 
 .userInforTable:hover {
-  background-color: rgba(0,0,0,0.1);
+  background-color: rgba(0, 0, 0, 0.1);
   transition: 0.3s;
 }
 
@@ -44,11 +45,24 @@
   width: 90%;
 }
 
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 8px solid;
+  border-color: #000 #0000;
+  animation: l1 1s infinite;
+}
+
+@keyframes l1 {
+  to {
+    transform: rotate(0.5turn);
+  }
+}
+
 @media screen and (min-width: 1024px) {
   .tableWrapper {
     overflow-x: hidden;
     width: 90%;
   }
 }
-
-

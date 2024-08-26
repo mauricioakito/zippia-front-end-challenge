@@ -17,6 +17,7 @@ export const Table = () => {
   const { filterUsers } = useFilter();
 
   useEffect(() => {
+    
     const filteredAndSortedData =
       sortColumn && sortOrder
         ? sortData(filterUsers(), sortColumn, sortOrder)
@@ -27,13 +28,17 @@ export const Table = () => {
   }, [inputSearch, sortColumn, sortOrder]);
 
   useEffect(() => {
-    setUser(userArray);
+    setTimeout(() => {
+      setUser(userArray);
+    }, 3000);
   }, [fetchUsers]);
 
   const handleUserInfo = (name: string) => {
     setFetchSelectedUser(name)
     setModalState(true)
   }
+
+  if (fetchUsers && !user) return <div className={styles.loader}></div>
 
   return (
     <div className={styles.tableWrapper}>
