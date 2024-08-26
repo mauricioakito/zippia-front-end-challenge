@@ -1,50 +1,61 @@
-# React + TypeScript + Vite
+# Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a Zippia JavaScript Test - Comprehensive User Management Dashboard.
 
-Currently, two official plugins are available:
+The application is part of a set of interviews conducted by Zippia, where I needed to develop an application based on the given briefing in the Doc folder.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Features developed
 
-## Expanding the ESLint configuration
+- Custom Hooks
+-- useFilter
+Filter data within the table component
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+-- useModalFilter
+Filter user data to show in a modal
 
-- Configure the top-level `parserOptions` property like this:
+-- useQuery
+Request the data in the API
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+-- useSort
+Sort the user data in the table header both by ASC or DESC
+
+-- useTable
+Manipulate the initial data shown in the table for the user
+
+- Components
+-- Header
+Basic header with logo and text
+
+-- Message
+Show a message based on the status code from the request
+
+-- Modal
+Display user complement data by user request
+
+-- Search
+Component that holds input filter and button fetch
+
+-- Table
+The table used to show all fetched data
+
+-- Footer
+Basic footer with logo and text
+
+# Notes
+
+• This project uses a basic context based on the Zustand library.
+• Instanced a loading handle with a timeout, because the API request is fast, where it wouldn't show the loader otherwise.
+
+Regardless of the outcome, thank you very much for the opportunity. I've enjoyed working on it :)
+
+## Instructions to run
+
+All that is required, is to run a yarn command in the root folder and then yarn dev to run locally.
+
 ```
+At the root folder:
+yarn
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+After the dependencies installation:
+yarn dev
 ```
