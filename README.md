@@ -7,6 +7,7 @@ The application is part of a set of interviews conducted by Zippia, where I need
 # Features developed
 
 - Custom Hooks
+
 -- useFilter
 Filter data within the table component
 
@@ -23,6 +24,7 @@ Sort the user data in the table header both by ASC or DESC
 Manipulate the initial data shown in the table for the user
 
 - Components
+
 -- Header
 Basic header with logo and text
 
